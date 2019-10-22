@@ -1,4 +1,4 @@
-Advanced Statistics Module 9 T-Test for Indpendent Samples
+Advanced Statistics Module 9 T-Test for Independent Samples
 ================
 
 The data below is from a study whose research hypothesis was: “There will be a difference between boys and girls in the number of times they raise their hand in class.” For the purposes of this study, boys were coded as 2 on gender; girls were coded as 1 and boys were marked 0.
