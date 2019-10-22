@@ -1,0 +1,27 @@
+<h1 id="advanced-statistics-module-9-t-test-for-indpendent-samples">Advanced Statistics Module 9 T-Test for Indpendent Samples</h1>
+<p>The data below is from a study whose research hypothesis was: “There will be a difference between boys and girls in the number of times they raise their hand in class.” For the purposes of this study, boys were coded as 2 on gender; girls were coded as 1 and boys were marked 0.</p>
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">10</span>)
+y=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">6</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">ttestx =<span class="st"> </span><span class="kw">t.test</span>(x)
+samplemeanx =<span class="st"> </span><span class="kw">round</span>(ttestx$estimate,<span class="dv">2</span>)
+
+ttesty =<span class="st"> </span><span class="kw">t.test</span>(y)
+samplemeany =<span class="st"> </span><span class="kw">round</span>(ttesty$estimate,<span class="dv">2</span>)
+
+dfx =<span class="st"> </span><span class="kw">length</span>(x)-<span class="dv">1</span>
+dfy =<span class="st"> </span><span class="kw">length</span>(y)-<span class="dv">1</span>
+
+tscorex =<span class="st"> </span><span class="dv">2</span>*(<span class="dv">1</span>-ttestx$p.value)
+tscorey =<span class="st"> </span><span class="dv">2</span>*(<span class="dv">1</span>-ttesty$p.value)</code></pre>
+<p>#1. Find your two sample means.</p>
+<p>The sample mean of data (x) is 7.6, while the sample mean of data (y) is 3.57</p>
+<p>#2. Find the degrees of freedom(s).</p>
+<p>The degree of freedom for data (x) is 4 and the degree of freedom for y is 6.</p>
+<p>#3. Find t-test statistic score (s).</p>
+<p>The t-statistic score for data (x) is 6.2898048 and the t-statistic for data (y) is 4.9669963.</p>
+<p>#4. Find the P value (s).</p>
+<p>The p-value for data (x) is 0.003264 and the p-value for data (y) is 0.0025344.</p>
+<p>#5. Assume an alpha of .05 was chosen, Would this result have been statistically significant?</p>
+<p>Yes, with an alpha of .05, the results are significant because the p-value for data (x) is 0.0032, while the p-value for data (y) is 0.0025. Since both of these values are below 0.05, we can reject the null hypothesis and conclude that gender does in fact play a role in the number of times a student raises their hand.</p>
+<p>#6. What critical value would your obtained t-test value have to exceed to be significant at the .01 level (assume a two-tailed test)?</p>
+<p>For data set (x), the critical value would be 2(1-pvalue), which would be 1.9934721, and data set (y) would be 1.9949311.</p>
